@@ -217,6 +217,13 @@ input:invalid {
 
 .main-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.cards {
+    display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
     column-gap: 20px;
@@ -235,7 +242,7 @@ img {
     height: 250px;
     object-fit: cover;
     background: #f2f3f3;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 
@@ -264,7 +271,6 @@ img {
     display: flex;
     justify-content: space-between;
 }
-
 
 /* стили футера */
 .ftr {
@@ -309,6 +315,7 @@ img {
 
 .detail-information__header {
     font-size: 35px;
+    text-align: center;
 }
 
 .detail-information__trailer-header {
@@ -325,6 +332,10 @@ img {
     object-fit: cover;
 }
 
+.btn-load-more {
+    color: black;
+    cursor: pointer;
+}
 
 
 /* медиа-запросы */
