@@ -8,16 +8,17 @@
     <title>Films</title>
 </head>
 <body>
-    <?php require "parts/sign-in-modal.php" ?>
-    <?php require "parts/sign-up-modal.php" ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/parts/index/sign-in-modal.php" ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . "/parts/index/sign-up-modal.php" ?>
 
+<div class="wrppr">
     <div class="container">
-        <?php require "parts/header.php" ?>
-        <?php require "parts/main-content.php" ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . "/parts/general/header.php" ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . "/parts/index/main-content.php" ?>
     </div>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . "/parts/general/footer.php" ?>
+</div>
 
-    <?php require "parts/footer.php"?>
-
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

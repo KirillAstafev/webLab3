@@ -8,15 +8,24 @@
 
 :root {
     --accent-color: #92f58e;
-    --background-color: #220e37; /*#7fb6ec*/
+    --background-color: #220e37;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
-    /* height: 100vh; */
     font-size: 16px;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: var(--background-color);
     color: white;
+}
+
+.wrppr {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 input:hover {
@@ -147,6 +156,7 @@ button {
 
 /* Ограничитель, в него вложены шапка, основной контент */
 .container {
+    flex: 1 0 auto;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -215,6 +225,7 @@ input:invalid {
 }
 
 .card {
+    width: 200px;
     align-items: baseline;
     transition: all 0.5s linear;
 }
@@ -235,20 +246,36 @@ img {
 
 .card__info {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    row-gap: 10px;
     margin-top: 10px;
     transition: 0.3s linear all;
+    text-align: center;
+
 }
+
+.card__link {
+    color: white;
+    text-decoration: none;
+}
+
+.card__second-row {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /* стили футера */
 .ftr {
+    flex: 0 0 auto;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 70px;
-    background-color: rgb(155,89,182, 0.1);
+    background-color: rgb(155, 89, 182, 0.1);
 }
 
 .ftr__author {
@@ -272,6 +299,33 @@ img {
     background-color: inherit;
     margin-left: 10px;
 }
+
+.detail-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+}
+
+.detail-information__header {
+    font-size: 35px;
+}
+
+.detail-information__trailer-header {
+    font-size: 30px;
+}
+
+.detail-information__content {
+    font-size: 18px;
+}
+
+.detail-information__poster {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+
 
 /* медиа-запросы */
 @media screen and (max-width: 576px) {

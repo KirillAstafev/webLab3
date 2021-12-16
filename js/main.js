@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const signInOpenSignUpLink = docGet('.sign-in__open-sign-up');
-    signInOpenSignUpLink.addEventListener('click', function() {
+    signInOpenSignUpLink.addEventListener('click', function () {
         signInWrapper.style.display = 'none';
         signUpWrapper.style.display = 'block';
     });

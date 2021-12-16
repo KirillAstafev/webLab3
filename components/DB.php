@@ -1,6 +1,6 @@
 <?php
 
-class DB
+class DBConnection
 {
     private $link;
 
@@ -9,14 +9,15 @@ class DB
         $this->connect();
     }
 
-    private function connect(): DB
+    private function connect(): DBConnection
     {
-            $config = parse_ini_file("config/config.ini");
-            $this->link = new PDO('mysql:host=' . $config['host'] . ';dbname=' . $config['dbname'],
-                $config['login'], $config['password']);
+        $config = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . "/config/config.ini");
+        $this->link = new PDO('mysql:host=' . $config['host'] . ';dbname='
+            . $config['dbname'],
+            $config['login'],
+            $config['password']);
 
-            return $this;
-
+        return $this;
     }
 
 
@@ -26,16 +27,23 @@ class DB
         return $sth->execute();
     }
 
-    public function query(string $sql): array
+    public function fetchAll(string $sql): array
     {
         $sth = $this->link->prepare($sql);
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result === false) {
-         return [];
+            return [];
         }
         return $result;
-}
+    }
+
+    public function fetch(string $sql)
+    {
+        $sth = $this->link->prepare($sql);
+        $sth->execute();
+        return $sth->fetch();
+    }
 
 }
